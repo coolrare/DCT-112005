@@ -175,8 +175,10 @@
         <div class="widget search">
           <div class="widget-content">
             <div id="searchbox">
-              <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s" />
-              <input type="button" value="搜尋" id="searchbutton" (click)="search()" />
+              <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s"
+                (keyup)="inputKeyup($event)"
+                (keyup.enter)="searchByEnter($event)"/>
+              <input type="button" value="搜尋" id="searchbutton" (click)="search($event)" />
               {{ counter }}
             </div>
           </div>

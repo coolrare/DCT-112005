@@ -14,8 +14,22 @@ export class AppComponent {
   title = environment.api;
   counter = 0;
 
-  search() {
+  search(event: MouseEvent) {
+
+    console.log(event.clientY);
     console.log('search');
     this.counter++;
+  }
+
+  inputKeyup(event: KeyboardEvent) {
+    console.log(event.key);
+    if(event.key === 'Enter') {
+      console.log((event.target as HTMLInputElement).value);
+    }
+  }
+
+  searchByEnter(event: Event) {
+    const newEvent = event as KeyboardEvent;
+    console.log('search by enter', newEvent.altKey);
   }
 }
