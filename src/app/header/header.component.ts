@@ -11,4 +11,5 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   title = 'The Will Will Web Demo';
   url = 'http://blog.miniasp.com/';
+  data = { name: 'Mike'};
 }

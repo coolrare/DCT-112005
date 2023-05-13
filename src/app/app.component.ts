@@ -12,4 +12,10 @@ import { environment } from 'src/environments/environment';
 })
 export class AppComponent {
   title = environment.api;
+  counter = 0;
+
+  search() {
+    console.log('search');
+    this.counter++;
+  }
 }
