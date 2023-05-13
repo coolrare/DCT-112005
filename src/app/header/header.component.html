@@ -24,11 +24,16 @@
       </div>
       <div class="title-wrapper">
         <div>
-          <img src="/assets/images/logo.png" class="pull-left logo" alt="The Will Will Web">
+          <img
+            src="/assets/images/logo.png"
+            class="pull-left logo"
+            alt="The Will Will Web"
+            (click)="toggleHighlight()" >
 
           <hgroup class="pull-left">
-            <h1><a [href]="url" [attr.data-id]="title">{{ title }}</a></h1>
-            <h3>記載著 Will 在網路世界的學習心得與技術分享</h3>
+            <h1><a [class]="{highlight: isHighlight}" [href]="url" [attr.data-id]="title">{{ title }}</a></h1>
+            <h3 [style]="{ color: h3Color }">記載著 Will 在網路世界的學習心得與技術分享</h3>
+            <button >Test</button>
           </hgroup>
 
           <div id="social-icons" class="pull-right social-icon">
