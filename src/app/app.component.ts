@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { environment } from 'src/environments/environment';
@@ -12,12 +12,14 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('inputText') inputText?: ElementRef;
+
   title = environment.api;
   counter = 0;
   keyword = 'test';
 
   search(event: MouseEvent) {
-
+    console.log(this.inputText?.nativeElement as HTMLInputElement);
     console.log(event.clientY);
     console.log('search');
     this.counter++;

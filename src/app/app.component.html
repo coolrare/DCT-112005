@@ -179,12 +179,14 @@
               <!-- [value]="keyword"
               (input)="keyword = $any($event.target).value" -->
               <input type="text" placeholder="請輸入搜尋關鍵字" accesskey="s"
+                #inputText
                 [(ngModel)]="keyword"
                 (keyup)="inputKeyup($event)"
                 (keyup.enter)="searchByEnter($event)"/>
               <input type="button" value="搜尋" id="searchbutton" (click)="search($event)" />
               <p>counter: {{ counter }}</p>
               <p>keyword: {{ keyword }}</p>
+              <p>keyword (DOM): {{ inputText.value }}</p>
             </div>
           </div>
         </div>
