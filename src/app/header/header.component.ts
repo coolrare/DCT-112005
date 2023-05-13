@@ -14,8 +14,10 @@ export class HeaderComponent {
   data = { name: 'Mike' };
   isHighlight = false;
   h3Color = 'red';
+  displayHeader = true;
 
   toggleHighlight() {
+    this.displayHeader = !this.displayHeader;
     this.isHighlight = !this.isHighlight;
     this.h3Color = this.h3Color === 'red' ? 'black' : 'red';
   }
