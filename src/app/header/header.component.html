@@ -31,9 +31,13 @@
             (click)="toggleHighlight()" >
 
           <hgroup class="pull-left" *ngIf="displayHeader">
-            <h1><a [class]="{highlight: isHighlight}" [href]="url" [attr.data-id]="title">{{ title }}</a></h1>
-            <h3 [style]="{ color: h3Color }">記載著 Will 在網路世界的學習心得與技術分享</h3>
-            <button >Test</button>
+            <h1><a [class]="{highlight: isHighlight}" [href]="url" [attr.data-id]="title">
+              {{ title | demo | uppercase }}
+            </a></h1>
+            <h3 [style]="{ color: h3Color }">
+              {{ calculatorService.temp }}
+
+              記載著 Will 在網路世界的學習心得與技術分享</h3>
           </hgroup>
 
           <div id="social-icons" class="pull-right social-icon">
